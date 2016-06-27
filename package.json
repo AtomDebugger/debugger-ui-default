@@ -1,0 +1,19 @@
+{
+  "name": "debugger-ui-default",
+  "main": "./lib/main",
+  "author": "philippvr",
+  "version": "0.0.0",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {},
+  "providedServices": {
+    "debugger-ui": {
+      "description": "The default ui for debugger",
+      "versions": {
+        "0.1.0": "provideView"
+      }
+    }
+  }
+}

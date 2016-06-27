@@ -1,0 +1,30 @@
+@import 'ui-variables';
+@import 'octicon-utf-codes';
+
+.line-number {
+  &.debugger-execution-line {
+    opacity: 1;
+
+    .icon-right {
+      visibility: visible;
+      opacity: 1;
+      color: @text-color-info;
+
+      &::before {
+        content: @arrow-right
+      }
+    }
+  }
+
+  &.debugger-breakpoint-line {
+    .icon-right {
+      visibility: visible;
+      opacity: 1;
+      color: @text-color-info;
+
+      &::before {
+        content: @stop
+      }
+    }
+  }
+}
