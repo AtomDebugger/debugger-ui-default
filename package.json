@@ -7,10 +7,16 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "atom-package-deps": "^4.0.0",
+    "underscore-plus": "^1.0.0"
+  },
   "devDependencies": {
     "flow-atom-api": "https://github.com/flow-atom/flow-atom-api.git"
   },
+  "package-deps": [
+    "debugger"
+  ],
   "providedServices": {
     "debugger-ui": {
       "description": "The default ui for debugger",
