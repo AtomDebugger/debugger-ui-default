@@ -1,7 +1,8 @@
 'atom-text-editor':
-  'alt-cmd-r': 'debugger:start-locally'
+  'alt-cmd-r': 'debugger:start'
   'alt-cmd-e': 'debugger:stop'
   'alt-cmd-c': 'debugger:resume'
   'alt-cmd-y': 'debugger:pause'
+  'alt-cmd-7': 'debugger:toggle-breakpoint-at-current-line'
   'f6':        'debugger:step-over'
   'f7':        'debugger:step-into'
