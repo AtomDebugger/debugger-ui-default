@@ -1,0 +1,9 @@
+'context-menu':
+  'atom-text-editor': [
+    {
+      label: 'Debug'
+      submenu: [
+        {label: 'Toggle Breakpoint', command: 'debugger:toggle-breakpoint-at-current-line'}
+      ]
+    }
+  ]
