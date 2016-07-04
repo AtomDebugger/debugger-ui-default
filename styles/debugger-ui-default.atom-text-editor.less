@@ -2,6 +2,18 @@
 @import 'octicon-utf-codes';
 
 .line-number {
+  &.debugger-breakpoint-line {
+    .icon-right {
+      visibility: visible;
+      opacity: 1;
+      color: @text-color-info;
+
+      &::before {
+        content: @stop
+      }
+    }
+  }
+
   &.debugger-execution-line {
     opacity: 1;
 
@@ -12,18 +24,6 @@
 
       &::before {
         content: @arrow-right
-      }
-    }
-  }
-
-  &.debugger-breakpoint-line {
-    .icon-right {
-      visibility: visible;
-      opacity: 1;
-      color: @text-color-info;
-
-      &::before {
-        content: @stop
       }
     }
   }
