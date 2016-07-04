@@ -8,6 +8,9 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {},
+  "devDependencies": {
+    "flow-atom-api": "https://github.com/flow-atom/flow-atom-api.git"
+  },
   "providedServices": {
     "debugger-ui": {
       "description": "The default ui for debugger",
