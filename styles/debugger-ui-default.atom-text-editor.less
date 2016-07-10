@@ -1,6 +1,29 @@
 @import 'ui-variables';
 @import 'octicon-utf-codes';
 
+.debugger-panel-resize-handle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  cursor: row-resize;
+  top: -5px;
+}
+
+.debugger-section-resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  cursor: col-resize;
+}
+
+.debugger-panel-resizer {
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+}
+
 .combo-box {
   display: flex;
   justify-content: space-between;
@@ -89,6 +112,27 @@ debugger-panel-menu {
     fill: currentColor;
     vertical-align: text-bottom;;
   }
+}
+
+debugger-panel-section {
+  flex-grow: 1;
+  overflow: scroll;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: @component-border-radius;
+  border-color: @tool-panel-border-color;
+
+  margin: @component-padding/2;
+  padding: @component-padding/2;
+
+  background-color: lighten(@tool-panel-background-color, 2%);
+}
+
+debugger-panel {
+  display: flex;
+  height: 100%;
+  padding: @component-padding/2;
 }
 
 .line-number {
