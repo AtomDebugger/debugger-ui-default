@@ -55,6 +55,42 @@
   }
 }
 
+debugger-panel-menu {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: content;
+  flex-flow: row nowrap;
+  display: flex;
+  justify-content: space-between;
+  padding: @component-padding/2 @component-padding/2 0 @component-padding/2;
+
+  .btn {
+    flex-grow: 0;
+    font-size: @font-size;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .combo-box {
+    min-width: 125px;
+  }
+
+  .btn-group {
+    padding-left: @component-padding/2;
+    padding-right: @component-padding/2;
+  }
+
+  .btn > .icon {
+    width: 12px;
+    height: 16px;
+    stroke: currentColor;
+    fill: currentColor;
+    vertical-align: text-bottom;;
+  }
+}
+
 .line-number {
   &.debugger-breakpoint-line {
     .icon-right {

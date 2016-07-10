@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "atom-package-deps": "^4.0.0",
-    "underscore-plus": "^1.0.0"
+    "underscore-plus": "^1.0.0",
+    "fs-plus": "^2.9.1"
   },
   "devDependencies": {
     "flow-atom-api": "https://github.com/flow-atom/flow-atom-api.git"
