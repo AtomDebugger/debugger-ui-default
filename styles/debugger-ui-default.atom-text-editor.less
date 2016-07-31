@@ -123,10 +123,11 @@ debugger-panel-section {
   border-radius: @component-border-radius;
   border-color: @tool-panel-border-color;
 
-  margin: @component-padding/2;
-  padding: @component-padding/2;
-
   background-color: lighten(@tool-panel-background-color, 2%);
+
+  &:not(:last-child) {
+    margin-right: @component-padding;
+  }
 }
 
 debugger-panel {
