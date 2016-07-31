@@ -21,6 +21,8 @@ declare module 'debugger' {
     isEnabled(): bool;
 
     equals(other: Breakpoint): bool;
+
+    toHumanized(): string;
   }
 
   declare type BreakpointEventType  = 'inserted' | 'removed' | 'enabled' |
