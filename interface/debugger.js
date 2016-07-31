@@ -69,6 +69,10 @@ declare module 'debugger' {
     onSessionEvent(callback: ((event: SessionEvent) => void)): Disposable;
 
     onBreakpointEvent(callback: ((event: BreakpointEvent) => void)): Disposable;
+
+    findBreakpoint(location: BreakpointLocation): ?Breakpoint;
+
+    removeBreakpoint(breakpoint: Breakpoint): boolean;
   }
 
   declare interface DebuggerRegistry {
@@ -76,7 +80,7 @@ declare module 'debugger' {
     getDebuggerProxy(): DebuggerProxy;
   }
 
-  declare type DebuggerController = {
+  declare interface DebuggerController {
 
     debuggerRegistry: DebuggerRegistry;
   }
