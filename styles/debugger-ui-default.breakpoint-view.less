@@ -1,0 +1,73 @@
+@import 'ui-variables';
+@import 'octicon-utf-codes';
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+debugger-panel-section.breakpoint-view {
+  @panel-padding: @component-padding / 2;
+
+  display: flex;
+  padding: @panel-padding;
+
+  ul {
+    flex-grow: 1;
+
+    &.background-message {
+      animation: 1s fadein;
+
+      position: relative;
+      font-size: 1.5em;
+
+      li {
+        color: @text-color-subtle;
+
+        kbd {
+          background-color: transparent;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    li {
+      font-style: normal;
+
+      &.project.external {
+        font-style: italic;
+      }
+    }
+  }
+
+  &> .list-tree > .list-nested-item >
+  .list-tree > .list-nested-item:not(.collapsed) >
+  .list-tree {
+    display: flex;
+    flex-direction: column;
+
+    &> .list-item.selected.breakpoint {
+
+      @disclosure-arrow-padding: @disclosure-arrow-size + @component-icon-padding;
+
+      margin-left:      -@panel-padding - @disclosure-arrow-padding;
+      margin-right:     -@panel-padding;
+      padding-left:      @panel-padding + 2 * @disclosure-arrow-padding;
+      background-color: @background-color-selected;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .breakpoint {
+    &> .line-number {
+      margin-right: 1ex;
+    }
+
+    &> .description.code {
+      font-family: monospace;
+    }
+  }
+}

@@ -7,3 +7,9 @@
       ]
     }
   ]
+  '.list-item.breakpoint': [
+    {label: 'Edit Condition…',    command: 'debugger:edit-condition', enabled: false}
+    {label: 'Remove Breakpoint',  command: 'debugger:remove-breakpoint'}
+    {label: 'Disable Breakpoint', command: 'debugger:disable-breakpoint', enabled: false}
+    {type:  'separator'}
+  ]
