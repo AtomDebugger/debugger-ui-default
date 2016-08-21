@@ -104,6 +104,10 @@ declare module 'debugger' {
 
     getCallStack(): Promise<Array<StackFrame>>;
 
+    getSelectedFrame(): Promise<StackFrame>;
+
+    setSelectedFrame(level: number): void;
+
     getVariableList(): Promise<Array<Variable>>;
   }
 
