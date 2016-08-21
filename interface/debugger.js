@@ -45,6 +45,20 @@ declare module 'debugger' {
 
   declare type ExecutionLine = { filePath: string, bufferRow: number }
 
+  declare type StackFrame = {
+    level: number,
+    address: string,
+    function: string,
+    filePath: string,
+    bufferRow: number
+  }
+
+  declare type Variable = {
+    name: string,
+    value: string,
+    type: ?string
+  }
+
   declare class SessionEvent {
     type:          SessionEventType;
     reason:        SessionTerminationReason | SessionSuspensionReason;
@@ -56,9 +70,19 @@ declare module 'debugger' {
       executionLine?: ExecutionLine): void;
   }
 
+  declare type TargetEventType = 'output'
+
+  declare class TargetEvent {
+    type: TargetEventType;
+    message: string;
+
+    constructor(type: TargetEventType, message: string): void;
+  }
+
   declare interface EventDefs {
     BreakpointEvent: BreakpointEvent;
-    SessionEvent: SessionEvent;
+    SessionEvent:    SessionEvent;
+    TargetEvent:     TargetEvent;
   }
 
   declare interface DebuggerTarget  {
@@ -72,9 +96,15 @@ declare module 'debugger' {
 
     onBreakpointEvent(callback: ((event: BreakpointEvent) => void)): Disposable;
 
+    onTargetEvent(callback: ((event: TargetEvent) => void)): Disposable;
+
     findBreakpoint(location: BreakpointLocation): ?Breakpoint;
 
     removeBreakpoint(breakpoint: Breakpoint): boolean;
+
+    getCallStack(): Promise<Array<StackFrame>>;
+
+    getVariableList(): Promise<Array<Variable>>;
   }
 
   declare interface DebuggerRegistry {
