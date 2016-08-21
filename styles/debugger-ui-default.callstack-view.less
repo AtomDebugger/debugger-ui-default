@@ -1,0 +1,50 @@
+@import 'ui-variables';
+
+debugger-panel-section.callstack-view {
+  @panel-padding: @component-padding / 2;
+
+  display: flex;
+  padding: @panel-padding;
+
+  ol.list-group {
+    flex-grow: 1;
+  }
+
+  .stack-frame.disabled {
+    color: @text-color-subtle;
+  }
+
+  .stack-frame.selected {
+
+    margin-left:      -@panel-padding;
+    margin-right:     -@panel-padding;
+    padding-left:      @panel-padding;
+    background-color: @background-color-selected;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .level {
+    margin-left: @panel-padding;
+    margin-right: 1ex;
+  }
+
+  .function.code {
+    font-family: monospace;
+  }
+
+  .file, .line-number {
+    font-size: 0.9em;
+    color: @text-color-subtle;
+  }
+
+  .file {
+    margin-left: 0.5em;
+  }
+
+  .line-number::before {
+    content: ':';
+  }
+}
