@@ -8,7 +8,9 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "scripts": {
-    "test": "apm test"
+    "test": "apm test",
+    "clean": "rm -rf lib",
+    "build": "npm run clean; babel src --out-dir lib",
   },
   "dependencies": {
     "atom-package-deps": "^4.3.0",
