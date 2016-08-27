@@ -98,6 +98,8 @@ declare module 'debugger' {
 
     onTargetEvent(callback: ((event: TargetEvent) => void)): Disposable;
 
+    onFrameChange(callback: (() => void)): Disposable;
+
     findBreakpoint(location: BreakpointLocation): ?Breakpoint;
 
     removeBreakpoint(breakpoint: Breakpoint): boolean;
