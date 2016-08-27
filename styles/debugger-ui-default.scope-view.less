@@ -1,0 +1,41 @@
+@import 'ui-variables';
+
+debugger-panel-section.scope-view {
+  @panel-padding: @component-padding / 2;
+
+  display: flex;
+  padding: @panel-padding;
+
+  ul.list-group {
+    flex-grow: 1;
+  }
+
+  li.variable {
+    align-items: baseline;
+    display: flex;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .type {
+    font-family: monospace;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    font-size: 0.9em;
+
+    &::before {
+      content: '(';
+    }
+
+    &::after {
+      content: ')';
+    }
+  }
+
+  .value.unknown {
+    font-style: italic;
+    color: @text-color-subtle;
+  }
+}
