@@ -7,6 +7,9 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
+  "scripts": {
+    "test": "apm test"
+  },
   "dependencies": {
     "atom-package-deps": "^4.3.0",
     "underscore-plus": "^1.0.0",
