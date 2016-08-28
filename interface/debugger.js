@@ -54,9 +54,11 @@ declare module 'debugger' {
   }
 
   declare type Variable = {
+    id: string,
     name: string,
     value: string,
-    type: ?string
+    type: ?string,
+    has_children: boolean
   }
 
   declare class SessionEvent {
@@ -79,10 +81,20 @@ declare module 'debugger' {
     constructor(type: TargetEventType, message: string): void;
   }
 
+  declare type VariableEventType = 'updated' | 'left-scope' | 'entered-scope'
+
+  declare class VariableEvent {
+    type:     VariableEventType;
+    variable: Variable;
+
+    constructor(type: VariableEventType, variable: Variable): void;
+  }
+
   declare interface EventDefs {
     BreakpointEvent: BreakpointEvent;
     SessionEvent:    SessionEvent;
     TargetEvent:     TargetEvent;
+    VariableEvent:   VariableEvent;
   }
 
   declare interface DebuggerTarget  {
@@ -98,7 +110,7 @@ declare module 'debugger' {
 
     onTargetEvent(callback: ((event: TargetEvent) => void)): Disposable;
 
-    onFrameChange(callback: (() => void)): Disposable;
+    onVariableEvent(callback: ((event: VariableEvent) => void)): Disposable;
 
     findBreakpoint(location: BreakpointLocation): ?Breakpoint;
 
@@ -110,7 +122,7 @@ declare module 'debugger' {
 
     setSelectedFrame(level: number): void;
 
-    getVariableList(): Promise<Array<Variable>>;
+    getVariableChildren(variable: Variable): Promise<Array<Variable>>;
   }
 
   declare interface DebuggerRegistry {
